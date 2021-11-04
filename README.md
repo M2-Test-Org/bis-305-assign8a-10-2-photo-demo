@@ -31,8 +31,9 @@ Photo    8 X 9   Price: $9.99
 MattedPhoto    white matting 10 X 12   Price: $15.99
 FramedPhoto    modern, silver frame. 8 X 10   Price: $28.99
 ```
-In order to prepend the $ to currency values, the program will need to use the 
-CultureInfo.GetCultureInfo method. In order to do this, include the statement 
-using System.Globalization; at the top of your program and format the output 
-statements as follows: WriteLine("This is an example: {0}", value.ToString("C", 
-CultureInfo.GetCultureInfo("en-US")));
+
+**NOTE** that in order to pass this repo's tests, in addition to MindTap, to prepend the $ to currency values, use the `CultureInfo.GetCultureInfo` method. In order to do this, include the statement `using System.Globalization;` at the top of your program and format the output statements as follows: 
+
+```csharp
+  WriteLine("This is an example: {0}", value.ToString("C", CultureInfo.GetCultureInfo("en-US")));
+```
